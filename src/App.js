@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import Createbutton from "./component/button/button.js"
+import Imagecomponent from "./component/image/image.js"
+import Tablecomponent from "./component/tables/tables.js"
+import Formcomponent from "./component/form/form.js"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+const Ui=()=>{
+   return(
+    
+    <div>
+      <h1>Hello world</h1>
+      <Createbutton/>
+      <Createbutton/>
+      <Createbutton/>
+      <Createbutton/>
+       <div>
+
+      <Imagecomponent/>
+      <Imagecomponent/>
+      <Imagecomponent/>
+      <Imagecomponent/>
+
+       </div>
+
+
+      <div>
+      <Tablecomponent/>
+      </div>
+
+      <div>
+        <Formcomponent/>
+      </div>
+
+
     </div>
-  );
+     
+
+
+   )
 }
 
-export default App;
+export default Ui
