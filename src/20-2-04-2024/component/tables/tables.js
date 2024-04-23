@@ -4,7 +4,7 @@ const Tablecomponent =()=>{
       <table border="1">
          <thead>
             <tr>
-                <td>name</td>
+                <td>name</td> 
                 <td>age</td>
                 <td>phonenumber</td>
                 <td>address</td>
