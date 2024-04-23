@@ -1,7 +1,7 @@
 const Tablecomponent =()=>{
     return (
 
-      <table>
+      <table border="1">
          <thead>
             <tr>
                 <td>name</td>

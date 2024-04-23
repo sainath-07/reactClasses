@@ -2,13 +2,22 @@ import Createbutton from "./component/button/button.js"
 import Imagecomponent from "./component/image/image.js"
 import Tablecomponent from "./component/tables/tables.js"
 import Formcomponent from "./component/form/form.js"
-
+import ListComponent from "./component/list/list-component.js"
+import Orderedlist from "./component/list/orderlist.js"
 
 const Ui=()=>{
    return(
     
     <div>
-      <h1>Hello world</h1>
+
+{/* day02 */}
+        <ListComponent/>
+         <Orderedlist/>
+
+
+
+{/* day 01 */}
+      {/* <h1>Hello world</h1>
       <Createbutton/>
       <Createbutton/>
       <Createbutton/>
@@ -29,10 +38,13 @@ const Ui=()=>{
 
       <div>
         <Formcomponent/>
-      </div>
+      </div> */}
+
+
 
 
     </div>
+    
      
 
 
