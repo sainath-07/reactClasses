@@ -6,7 +6,7 @@
  
 
 const Buttoncomponent1= () => {
-   const  b=0
+   const  b=1
     
     if(b){
         return (
