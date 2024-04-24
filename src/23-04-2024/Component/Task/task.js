@@ -9,7 +9,7 @@ const Tataiplteamlist = () =>{
             TeamLogo : "https://upload.wikimedia.org/wikipedia/en/e/eb/Sunrisers_Hyderabad.png"
         },
         {
-            TeamName : "Chennai",
+            TeamName : "Chenna  i",
             TeamCaptian : "Ruturaj Gaikwad",
             TeamHighestScore : "CSK posted 246/5 against Rajasthan Royals in the 2010 season ",
             TeamPlayersnames : [ "MS Dhoni","Ruturaj Gaikwad",
