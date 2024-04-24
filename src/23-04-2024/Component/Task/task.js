@@ -1,15 +1,20 @@
 const Tataiplteamlist = () =>{
 
+
+
+
+
+
     const list = [
         {
-            TeamName : "Hyderabad",
+            TeamName : "Hyd",
             TeamCaptian : "Pat Cummins",
             TeamHighestScore : "SRH smashes record! Highest IPL score ever: 287/3 vs RCB (2024)",
             TeamPlayersnames : [ "Heinrich Klaasen","Mayank Agarwal","Anmolpreet Singh","Aiden Markram" ,"Travis Head" ],
             TeamLogo : "https://upload.wikimedia.org/wikipedia/en/e/eb/Sunrisers_Hyderabad.png"
         },
         {
-            TeamName : "Chenna  i",
+            TeamName : "Chenna    i",
             TeamCaptian : "Ruturaj Gaikwad",
             TeamHighestScore : "CSK posted 246/5 against Rajasthan Royals in the 2010 season ",
             TeamPlayersnames : [ "MS Dhoni","Ruturaj Gaikwad",
