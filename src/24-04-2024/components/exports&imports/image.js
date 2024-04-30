@@ -24,7 +24,7 @@ export const Heading2=()=>{
 }
 
 
-export const Heading3=()=>{
+ const Heading3=()=>{
     return(
         <>
         
@@ -35,3 +35,7 @@ export const Heading3=()=>{
 
     )
 }
+
+// or 
+
+export {Heading3}
