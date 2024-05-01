@@ -1,0 +1,33 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    position: fixed;
+    padding-left:10px;
+    padding-right:10px;
+    height: 50px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    align-items: center;
+}
+p{
+    color: white;
+}
+
+.text{
+    color: #fac031;
+    /* border: 2px solid white; */
+    margin-left: 12px;
+}
+.img{
+    display: flex;
+    justify-content: center;
+    padding-right: 30px;
+    column-gap: 20px;
+    border: 2px solid green;
+    padding: 20px;
+    
+}
+
+

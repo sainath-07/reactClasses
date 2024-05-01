@@ -1,0 +1,26 @@
+.forms{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+   
+}
+.input{
+    border: 2px solid green;
+    width: 40%;
+    height: 45px;
+    padding-left: 20px;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+.Submit{
+    /* border: 2px solid green; */
+    width: 10%;
+    height: 45px;
+    background-color: green;
+    border-radius: 4px;
+    margin-top: 10px;
+    border: none;
+    outline: none;
+    color: white;
+}

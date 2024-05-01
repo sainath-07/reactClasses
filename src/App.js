@@ -1,5 +1,10 @@
-import Navbar from "./29-03-2024/class component/navbar/navbar"
-import Button from "./29-03-2024/class component/Button/buttoncomponent"
+import Header1, { Header2, Header3, Header4, Navbar } from "./30-04-2024/Styling/header"
+import Bootstrapnavbar from "./30-04-2024/Bootstrap/navbar"
+import Bootstrapcards from "./30-04-2024/Bootstrap/cards"
+import Tablecomponent from "./30-04-2024/Reactbootstrap/table/table"
+import Cricle from "./30-04-2024/Reactspinners/spinner"
+import BootstrapForm from "./30-04-2024/task/bootstrapForm/bootstrapform"
+import Corousel from "./30-04-2024/task/corousel/image"
 
 
 
@@ -7,15 +12,33 @@ const Ui = () => {
   return (
 
     <div>
-      
 
-    <Button/>
+      {/* <Header1/>
+      <Header2/>
+      <Header3/>
+      <Header4/>
+      <Navbar/> */}
 
-    <Navbar/>
 
-     
+      {/* Bootstrap imports.. */}
 
- </div>
+      {/* <Bootstrapnavbar/>
+      <Bootstrapcards/> */}
+
+
+      {/* React bootstrap imports.. */}
+      {/* <Tablecomponent/> */}
+
+      {/* React spinner imports */}
+      {/* <Cricle/>   */}
+
+   {/* task */}
+     {/* <Forms/> */}
+    {/* <BootstrapForm/> */}
+
+    <Corousel/>
+
+    </div>
 
   )
 }
