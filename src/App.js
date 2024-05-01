@@ -1,10 +1,4 @@
-import Header1, { Header2, Header3, Header4, Navbar } from "./30-04-2024/Styling/header"
-import Bootstrapnavbar from "./30-04-2024/Bootstrap/navbar"
-import Bootstrapcards from "./30-04-2024/Bootstrap/cards"
-import Tablecomponent from "./30-04-2024/Reactbootstrap/table/table"
-import Cricle from "./30-04-2024/Reactspinners/spinner"
-import BootstrapForm from "./30-04-2024/task/bootstrapForm/bootstrapform"
-import Corousel from "./30-04-2024/task/corousel/image"
+import ButtonProp from "./01-05-2024/Prop/Prop"
 
 
 
@@ -12,31 +6,20 @@ const Ui = () => {
   return (
 
     <div>
+        
 
-      {/* <Header1/>
-      <Header2/>
-      <Header3/>
-      <Header4/>
-      <Navbar/> */}
-
-
-      {/* Bootstrap imports.. */}
-
-      {/* <Bootstrapnavbar/>
-      <Bootstrapcards/> */}
-
-
-      {/* React bootstrap imports.. */}
-      {/* <Tablecomponent/> */}
-
-      {/* React spinner imports */}
-      {/* <Cricle/>   */}
-
-   {/* task */}
-     {/* <Forms/> */}
-    {/* <BootstrapForm/> */}
-
-    <Corousel/>
+        <ButtonProp  text={"Log in"} bgColor={"green"}  buttonproperties={{
+          width: "100px",
+          height : 100
+        }}/>
+        <ButtonProp  text={"sign in"} bgColor={"red"} buttonproperties={{
+          width: "150px",
+          height:100
+        }} />
+        <ButtonProp  text={"sign up"} bgColor={"yellow "} buttonproperties={{
+       width: "150px",
+          height:100
+        }}/>
 
     </div>
 
