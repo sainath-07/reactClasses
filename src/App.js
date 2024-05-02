@@ -307,7 +307,6 @@ const Ui = () => {
         <Image
         src={"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"}
         >
-          https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg
 
         </Image>
       <h1>Good afternoon</h1>
