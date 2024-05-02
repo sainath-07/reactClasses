@@ -290,7 +290,7 @@ const Ui = () => {
 
     {/* task */}
 
-
+    <div id="flex">
     {
       fakestoreapi.map((eachObjects)=>{
         const {id,title,price,description,image}=eachObjects
@@ -300,6 +300,7 @@ const Ui = () => {
       })
 
     }
+    </div>
 
 
       {/* Children prop */}
