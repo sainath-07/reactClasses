@@ -38,13 +38,13 @@ class DisplayCards extends Component {
       },
       {
         id: 6,
-        title: "Honor Tab",
+        title: "Honor",
         src: "https://m.media-amazon.com/images/I/41fbozUvk-L._AC_SR320,320_.jpg",
         count: 0,
       },
       {
         id: 7,
-        title: "Watch",
+        title: "Laptop",
         src: "https://m.media-amazon.com/images/I/618qhNo1BOL._AC_UL480_FMwebp_QL65_.jpg",
         count: 0,
       },

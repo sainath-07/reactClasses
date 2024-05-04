@@ -1,5 +1,5 @@
 
-
+// Functional component props
 // const ButtonProp=(Prop)=>{
 //     console.log(Prop,"prop")
     
@@ -19,3 +19,5 @@
 
 
 // export default ButtonProp  
+
+

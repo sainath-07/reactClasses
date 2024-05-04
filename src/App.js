@@ -1,15 +1,16 @@
-import StateCounter from "./02-05-2024/state/state"
-import DisplayCards from "./02-05-2024/task/cards"
+import Todolisttask from "./03-05-2024/task/todowitharrobj"
+
 
 const Ui = () => {
 
   return(
 <>
-  {/* <StateCounter/> */}
-   <div >
+   {/* <Todolist/> */}
 
-  <DisplayCards/>
-   </div>
+   {/* task */}
+
+   <Todolisttask/>
+
 </>
 
   )
