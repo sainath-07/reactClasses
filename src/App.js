@@ -1,7 +1,7 @@
 // import ButtonProp from "./01-05-2024/Prop/Prop.js"
 
 import ChildrenProp from "./01-05-2024/Childrenprop/prop"
-// import ButtonProp from "./01-05-2024/PropWithMapMethod/PropWithMap"
+import ButtonProp from "./01-05-2024/PropWithMapMethod/PropWithMap"
 
 import Image from "./01-05-2024/Childrenprop/image"
 import Cards from "./01-05-2024/task/Flexcards"
@@ -347,7 +347,7 @@ const Ui = () => {
      {/* Prop  file*/}
 
 
-     {/* <ButtonProp text={"sign in "}  bgcolor={"green"}  buttonproperties={{
+     <ButtonProp text={"sign in "}  bgcolor={"green"}  buttonproperties={{
       width : "150px",
       height : "100px"
      }}/>
@@ -358,7 +358,7 @@ const Ui = () => {
      <ButtonProp  text={"submit "}  bgcolor={"yellow"}  buttonproperties={{
        width : "150px",
        height : "100px"
-     }}/> */}
+     }}/>
     </>
 
   )
