@@ -34,20 +34,7 @@ const Statehookarray = () => {
         );
       })
       }
-      <input type="text" id="input"/>
-      <button  onClick={()=>{
-        let p = document.getElementById("input").value
-        
-        const newproduct= [...product,{productPrice:p}]
-          updateproduct(
-            product=newproduct
-          )
-      }}>Click</button>
-
-
-      {
-        console.log(product)
-      }
+  
     </>
   );
 };

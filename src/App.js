@@ -2,6 +2,7 @@ import EventHandler from "./ReactCourse/Eventhandling/Eventhadler"
 import Statehook from "./ReactCourse/StateHook/statehook"
 import Demo from "./ReactCourse/state/stateusingtheeventhandlers"
 import Statehookarray from "./ReactCourse/StateHook/statehookarray"
+import Ifelse from "./ReactCourse/IF ELSE/ifelse"
 
 
 
@@ -9,7 +10,7 @@ import Statehookarray from "./ReactCourse/StateHook/statehookarray"
 const Ui = () => {
 
  return(
-            <Statehookarray/>
+   <Ifelse/>
   )
 }
 
