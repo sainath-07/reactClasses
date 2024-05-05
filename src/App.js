@@ -1,5 +1,7 @@
 import EventHandler from "./ReactCourse/Eventhandling/Eventhadler"
+import Statehook from "./ReactCourse/StateHook/statehook"
 import Demo from "./ReactCourse/state/stateusingtheeventhandlers"
+import Statehookarray from "./ReactCourse/StateHook/statehookarray"
 
 
 
@@ -7,7 +9,7 @@ import Demo from "./ReactCourse/state/stateusingtheeventhandlers"
 const Ui = () => {
 
  return(
-            <Demo/>
+            <Statehookarray/>
   )
 }
 
