@@ -1,16 +1,21 @@
-import EventHandler from "./ReactCourse/Eventhandling/Eventhadler"
-import Statehook from "./ReactCourse/StateHook/statehook"
-import Demo from "./ReactCourse/state/stateusingtheeventhandlers"
-import Statehookarray from "./ReactCourse/StateHook/statehookarray"
-import Ifelse from "./ReactCourse/IF ELSE/ifelse"
+
+import Propcomponent from "./ReactCourse/Propdestructing/prop"
 
 
 
 
 const Ui = () => {
 
+  let object={
+    name : "sainath",
+    age : 23,
+    address   : "Karwan",
+    state : "Hyderabad",
+    profession : null
+  }
+
  return(
-   <Ifelse/>
+   <Propcomponent {...object} />
   )
 }
 
