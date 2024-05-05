@@ -1,6 +1,13 @@
 import { Component } from "react";
 
 class Demo extends Component{
+
+            constructor(){
+                super()
+
+                this.updateprice= this.updateprice.bind(this)
+            }
+
        state={
         count : 55,
         name : "sainath"
