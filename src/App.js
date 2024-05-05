@@ -1,21 +1,15 @@
 
-import Propcomponent from "./ReactCourse/Propdestructing/prop"
+import Databinding from "./ReactCourse/Databinding/databinding"
 
 
 
 
 const Ui = () => {
 
-  let object={
-    name : "sainath",
-    age : 23,
-    address   : "Karwan",
-    state : "Hyderabad",
-    profession : null
-  }
+
 
  return(
-   <Propcomponent {...object} />
+    <Databinding/>
   )
 }
 
