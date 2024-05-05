@@ -1,4 +1,4 @@
-import Useeffect from "./ReactCourse/Hook/useEffect/useeffect"
+import FetchapiComponent from "./ReactCourse/Hook/fetch/useeffectwithfetch"
 
 
 
@@ -6,7 +6,7 @@ import Useeffect from "./ReactCourse/Hook/useEffect/useeffect"
 const Ui = () => {
 
  return(
-            <Useeffect/>
+            <FetchapiComponent/>
   )
 }
 
