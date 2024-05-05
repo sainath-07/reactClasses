@@ -1,5 +1,5 @@
 const ChildrenProp=(callprop)=>{
-    console.log(callprop,"calledprop")
+   //  console.log(callprop,"calledprop")
     return(
        <div>
          

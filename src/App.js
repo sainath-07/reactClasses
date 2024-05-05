@@ -6,6 +6,7 @@ import ButtonProp from "./01-05-2024/PropWithMapMethod/PropWithMap"
 import Image from "./01-05-2024/Childrenprop/image"
 import Cards from "./01-05-2024/task/Flexcards"
 import { fakestoreapi } from "./01-05-2024/Childrenprop/fakestoreapidata"
+import Parent from "./04-05-2024/parent"
 
 
 
@@ -285,13 +286,16 @@ const Ui = () => {
 //     }
 //   ]
 
+
   return (
 
     <>
+      
+     
 
     {/* task */}
 
-    <div id="flex">
+    {/* <div id="flex">
     {
       fakestoreapi.map((eachObjects)=>{
         const {id,title,price,description,image}=eachObjects
@@ -301,7 +305,7 @@ const Ui = () => {
       })
 
     }
-    </div>
+    </div> */}
 
 
       {/* Children prop */}
@@ -337,15 +341,13 @@ const Ui = () => {
            )
       })
     } */}
-     
-
-
+               
 
 
 
 
      {/* Prop  file*/}
-
+{/* 
 
      <ButtonProp text={"sign in "}  bgcolor={"green"}  buttonproperties={{
       width : "150px",
@@ -358,7 +360,20 @@ const Ui = () => {
      <ButtonProp  text={"submit "}  bgcolor={"yellow"}  buttonproperties={{
        width : "150px",
        height : "100px"
-     }}/>
+     }}/> */}
+
+
+
+
+
+
+
+
+
+
+     {/* parent  */}
+
+     
     </>
 
   )
