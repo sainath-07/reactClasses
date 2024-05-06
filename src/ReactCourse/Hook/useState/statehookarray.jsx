@@ -40,7 +40,7 @@ const Statehookarray = () => {
         
         
         const newproduct=product.map((eachobject)=>{
-          return {...eachobject,productPrice:p}
+          return {...eachobject ,productPrice:p}
         })
         updateproduct(newproduct)
       }}>Click</button>
