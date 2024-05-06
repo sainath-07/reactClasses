@@ -1,4 +1,5 @@
-import Todolisttask from "./03-05-2024/task/todowitharrobj"
+import Fetchwithclass from "./06-05-2024/Fetchwithclasscomponent/Fetch"
+import Listitem from "./06-05-2024/Fetchwithclasscomponent/listitems"
 
 
 const Ui = () => {
@@ -9,7 +10,9 @@ const Ui = () => {
 
    {/* task */}
 
-   <Todolisttask/>
+   <Fetchwithclass/>
+
+  
 
 </>
 
