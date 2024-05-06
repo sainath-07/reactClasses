@@ -18,7 +18,7 @@ const Statehookarray = () => {
       productName: "Nokia 589",
       productPrice: 9000,
     },
-  ]);
+    ]);
 
   return (
     <>
@@ -38,12 +38,14 @@ const Statehookarray = () => {
       <button  onClick={()=>{
         let p = document.getElementById("input").value
         
-        const newproduct= [...product,{productPrice:p}]
-          updateproduct(
-            product=newproduct
-          )
+        
+        const newproduct=product.map((eachobject)=>{
+          return {...eachobject,productPrice:p}
+        })
+        updateproduct(newproduct)
       }}>Click</button>
-
+      
+        
 
       {
         console.log(product)
