@@ -10,7 +10,7 @@ const Ui = () => {
 
    {/* task */}
 
-   <Fetchwithclass/>
+   <Fetchwithclass color={"red"}/>
 
   
 

@@ -11,6 +11,7 @@ class Fetchwithclass extends Component {
 
     this.state = {
       message: "Good",
+      color : "green",
       products: [],
     };
   }
@@ -61,15 +62,18 @@ class Fetchwithclass extends Component {
     }
   };
 
-  static getDerivedStateFromProps() {
+  static getDerivedStateFromProps({color}) {
     // it changes the state based on the prop over the time.
     console.log("getDerivedStateFromProps");
-    return null;
+    return {
+        color : color
+    };
   }
 
   render() {
     return (
-      <>
+      <> 
+      <h1 style={{color:this.state.color}}>Fake store Api list item</h1>
         {this.state.products.length > 0 ? (
           <div className="d-flex flex-wrap justify-content-center mt-5 gap-5 ">
             {this.state.products.map((eachobj, index) => {
