@@ -1,4 +1,4 @@
-import FetchapiComponent from "./ReactCourse/Hook/fetch/useeffectwithfetch"
+import StaticImage from "./ReactCourse/staticImages/images"
 
 
 
@@ -6,7 +6,7 @@ import FetchapiComponent from "./ReactCourse/Hook/fetch/useeffectwithfetch"
 const Ui = () => {
 
  return(
-            <FetchapiComponent/>
+            <StaticImage/>
   )
 }
 
