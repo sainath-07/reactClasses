@@ -56,9 +56,10 @@ class Updatelifecycle extends Component {
   }
 
 
-  getSnapshotBeforeUpdate(state,props){
+  getSnapshotBeforeUpdate(prop,state){
+    // here 1st argument is considered as prop and second argument is considered as state.
 
-      console.log(props,"getSnapshotBeforeUpdate")
+      console.log(state,"getSnapshotBeforeUpdate")
       return null
   }
 
