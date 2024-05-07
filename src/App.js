@@ -1,25 +1,30 @@
-import Fetchwithclass from "./06-05-2024/Fetchwithclasscomponent/Fetch"
-import Listitem from "./06-05-2024/Fetchwithclasscomponent/listitems"
-import Task from "./06-05-2024/task/task"
+import { Component } from "react"
+import Updatelifecycle from "./07-05-2024/Updatingphase/update"
 
 
-const Ui = () => {
 
-  return(
-<>
- 
+class Ui extends Component {
 
-   {/* <Fetchwithclass color={"red"}/> */}
-
-   {/* task */}
-   <Task/>
-
-
+  state={
+    color : "red"
+  }
   
+  changecolor=()=>{
+    this.setState({
+      color:"grey"
+    })
+  }
 
-</>
+  render() {
 
-  )
+    return (
+      <>
+        <Updatelifecycle color={this.state.color} />
+         <button onClick={this.changecolor}>change color</button>
+      </>
+
+    )
+  }
 }
 
 export default Ui
