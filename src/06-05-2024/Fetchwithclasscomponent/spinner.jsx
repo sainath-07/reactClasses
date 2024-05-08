@@ -6,7 +6,7 @@ const Spinner = () => {
     <>
       <ColorRing
         visible={true}
-        height="350"
+        height="240"
         width="100%"
         ariaLabel="color-ring-loading"
         wrapperStyle={{}}

@@ -1,25 +1,11 @@
-import Fetchwithclass from "./06-05-2024/Fetchwithclasscomponent/Fetch"
-import Listitem from "./06-05-2024/Fetchwithclasscomponent/listitems"
-import Task from "./06-05-2024/task/task"
+import Task from "./06-05-2024/task/task";
 
-
-const Ui = () => {
-
-  return(
-<>
- 
-
-   {/* <Fetchwithclass color={"red"}/> */}
-
-   {/* task */}
-   <Task/>
-
-
-  
-
-</>
-
-  )
+const Render=()=>{
+   return(
+    <>
+    <Task/>
+    </>
+   )
 }
 
-export default Ui
+export default Render;

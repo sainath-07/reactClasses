@@ -1,103 +1,109 @@
-import axios from "axios";
 import { Component } from "react";
+import axios from "axios";
 import ProductsList from "./Productlist";
-import "./task.css";
-import { Circles } from "react-loader-spinner";
 import Spinner from "../Fetchwithclasscomponent/spinner";
-
+import "./task.css";
 class Task extends Component {
   state = {
     products: [],
     dummyproducts: [],
- 
+    categories: [],
+    // loading: false,
   };
 
   componentDidMount() {
-    this.fetchdata();
+    this.eachcategories();
+    this.useraction();
+    this.allcategories();
   }
 
-  fetchdata = async () => {
-    const result = await axios.get("https://fakestoreapi.com/products/");
+  // buttons
+  eachcategories = async () => {
+    let categoriesdata = await axios.get(
+      "https://fakestoreapi.com/products/categories"
+    );
     this.setState({
-      products: result.data,
-      dummyproducts: result.data,
-      all: result,
-    });
-    console.log(result.data);
-    // console.log(result);
-  };
-
-  useraction = (catitem) => {
-    const updateitems = this.state.dummyproducts.filter((ele) => {
-      return ele.category == catitem;
-    });
-    this.setState({
-      products: updateitems,
+      categories: categoriesdata.data,
     });
   };
 
-  allproducts = () => {
-    const updateitems = this.state.dummyproducts.map((ele) => {
-      return ele;
-    });
+  // initalising the data to dummyproducts and products
+  useraction = async () => {
+    let cards = await axios.get(`https://fakestoreapi.com/products`);
     this.setState({
-      products: updateitems,
+      dummyproducts: cards.data,
+      products: cards.data,
+    });
+  };
+
+  allcategories = async () => {
+    let cards = await axios.get(`https://fakestoreapi.com/products`);
+    this.setState({
+      dummyproducts: cards.data,
+      products: cards.data,
+      loading: true,
+    });
+  };
+
+  userdata = async (select) => {
+    this.setState({
+      products: this.state.dummyproducts,
+      // loading: false,
+    });
+
+    const filterdata = this.state.dummyproducts.filter(
+      (eachcategiores) => eachcategiores.category == select
+    );
+    this.setState({
+      products: filterdata,
+      // loading: true,
     });
   };
 
   render() {
     return (
-      <div>
-        <div className="header mt-4  d-flex justify-content-center  bg-danger rounded  mx-5 py-2 gap-4 ">
+      <>
+        <div className="mt-4  d-flex justify-content-center  bg-danger rounded  mx-5 py-2 gap-4">
+          {this.state.categories.map((each, index) => {
+            return (
+              <>
+                {this.state.products.length>0 ? (
+                  <>
+                    <button
+                      className="button bg-warning  rounded py-2"
+                      onClick={() => this.userdata(each)}
+                    >
+                      {each}
+                    </button>
+                  </>
+                ) : (
+                  // <Spinner />
+                  null
+                )}
+              </>
+            );
+          })}
           <button
-            className="button bg-warning  rounded p-2 fs-5"
-            onClick={() => this.useraction("women's clothing")}
-          >
-            women's clothing
-          </button>
-          <button
-            className="button bg-warning  rounded p-2 fs-5"
-            onClick={() => this.useraction("jewelery")}
-          >
-            jewelery
-          </button>
-          <button
-            className="button bg-warning  rounded p-2 fs-5"
-            onClick={() => this.useraction("electronics")}
-          >
-            electronics
-          </button>
-          <button
-            className="button bg-warning  rounded p-2 fs-5"
-            onClick={() => this.useraction("men's clothing")}
-          >
-            men's clothing
-          </button>
-          <button
-            className="button bg-warning  rounded p-2 fs-5"
-            onClick={() => this.allproducts(this.state.products)}
+            className="button bg-warning rounded py-2"
+            onClick={this.allcategories}
           >
             All categories
           </button>
         </div>
 
         <div className="d-flex mt-5 justify-content-center gap-4 flex-wrap">
-
-          {
-            this.state.products.length>0
-            ?
+          {this.state.products.length > 0 ? (
             <>
-          {this.state.products.map((eachobject, index) => {
-            return <ProductsList list={eachobject} key={index} />;
-          })}
+              {this.state.products.map((eachobject, index) => {
+                return <ProductsList list={eachobject} key={index} />;
+              })}
             </>
-            :
-            <Spinner/>
-          }
+          ) : (
+            <Spinner />
+          )}
         </div>
-      </div>
+      </>
     );
   }
 }
-
 export default Task;
