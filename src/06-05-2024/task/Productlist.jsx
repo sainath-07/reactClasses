@@ -1,6 +1,6 @@
 import "./task.css"
 
-const ProductsList=({list})=>{
+export const ProductsList=({list})=>{
     const {category,id,image,title,price,rating:{rate}}=list
       return(
         <>
@@ -22,4 +22,4 @@ const ProductsList=({list})=>{
         </>
       )
 }
-export default ProductsList
+// export ProductsList

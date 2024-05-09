@@ -1,6 +1,6 @@
 import { Component } from "react";
 import axios from "axios";
-import ProductsList from "./Productlist";
+import {ProductsList} from "./Productlist";
 import Spinner from "../Fetchwithclasscomponent/spinner";
 import "./task.css";
 class Task extends Component {
