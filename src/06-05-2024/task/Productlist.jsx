@@ -13,7 +13,7 @@ const ProductsList=({list})=>{
 
                 <div className="d-flex gap-3 justify-content-center">
 
-                <button type="button" class="btn btn-success">{`price ${price}`}</button>
+                <button type="button" className="btn btn-success">{`price ${price}`}</button>
                 <button type="button" class="btn btn-success">{`rating : ${rate}`}</button>
                 </div>
 
