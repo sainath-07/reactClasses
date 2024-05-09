@@ -64,7 +64,7 @@ class Task extends Component {
     return (
       <>
         <div className="mt-4  d-flex justify-content-center  bg-danger rounded  mx-5 py-2 gap-4">
-          {this.state.categories.map((each, index) => {
+          {this.state.categories.map((each, index ) => {
             return (
               <>
                 {this.state.products.length>0 ? (
