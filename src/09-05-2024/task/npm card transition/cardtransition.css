@@ -1,0 +1,16 @@
+.cardfront{
+    width: 250px;
+    height: 280px;
+    /* border: 4px solid black; */
+    background-color: gray;
+    margin: 10px auto;
+    
+}
+.cardback{
+    width: 250px;
+    margin: 10px auto;
+    height: 280px;
+    /* border: 4px solid black; */
+    /* background-color: red; */
+    
+}
