@@ -2,16 +2,20 @@ import { useRef, useState } from "react";
 
 const Forms = () => {
   const usernameref = useRef(null);
+  const userpassref = useRef(null);
+
+
   const [initial, updateinitial] = useState(false);
+
   const formsubmit = (e) => {
     e.preventDefault();
     const usercheck = usernameref.current.value;
+    const userpasscheck = usernameref.current.value;
 
-    if (usercheck.length < 3) {
+    if (usercheck.length < 3 || userpasscheck.length<3) {
       updateinitial(true);
-    } 
-    else{
-     alert("Login successfull...")
+    } else {
+      alert("Login successfull...");
     }
   };
 
@@ -37,6 +41,23 @@ const Forms = () => {
             Please enter the character more than 3
           </span>
         )}
+            <br />
+        {/* <input
+          type="password"
+          className="form-control"
+          id="password"
+          name="password"
+          ref={userpassref}
+        />
+         {initial && (
+          <span
+            style={{
+              color: "red",
+            }}
+          >
+            Please enter the character more than 3
+          </span>
+        )} */}
         <br />
         <button
           style={{
