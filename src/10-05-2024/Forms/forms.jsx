@@ -1,28 +1,50 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const Forms = () => {
-  const useNameRef = useRef(null);
+  const usernameref = useRef(null);
+  const [initial, updateinitial] = useState(false);
+  const formsubmit = (e) => {
+    e.preventDefault();
+    const usercheck = usernameref.current.value;
 
-  const formSubmit=()=>{
-     
-  }
+    if (usercheck.length < 3) {
+      updateinitial(true);
+    } 
+    else{
+     alert("Login successfull...")
+    }
+  };
 
   return (
     <>
-      <form onSubmit={formSubmit}>
+      <form onSubmit={formsubmit}>
         <div className="form-group">
-          <label htmlFor="exampleInputEmail1">Email address</label>
+          <label htmlFor="email">Email address:</label>
           <input
             type="text"
             className="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-            placeholder="Enter email"
-            ref={useNameRef}
+            id="email"
+            name="email"
+            ref={usernameref}
           />
         </div>
-
-        <button type="submit" className="btn btn-primary">
+        {initial && (
+          <span
+            style={{
+              color: "red",
+            }}
+          >
+            Please enter the character more than 3
+          </span>
+        )}
+        <br />
+        <button
+          style={{
+            border: "2px solid black",
+          }}
+          type="submit"
+          className="btn btn-default"
+        >
           Submit
         </button>
       </form>
