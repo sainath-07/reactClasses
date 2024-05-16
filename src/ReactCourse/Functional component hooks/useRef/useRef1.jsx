@@ -15,7 +15,7 @@ const Userefhook=()=>{
         <button onClick={()=>{
             console.log(ele)
             console.log(ele.current)
-            ele.current.innerHTML="Update"
+            ele.current.innerHTML="Updated"
         }}>Click</button>
 
 
