@@ -42,7 +42,7 @@ const Forms = () => {
           </span>
         )}
             <br />
-        {/* <input
+        <input
           type="password"
           className="form-control"
           id="password"
@@ -57,7 +57,7 @@ const Forms = () => {
           >
             Please enter the character more than 3
           </span>
-        )} */}
+        )}
         <br />
         <button
           style={{
