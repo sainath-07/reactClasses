@@ -10,10 +10,12 @@ const Databinding=()=>{
          {/* one way data binding */}
         <button   onClick={()=>udpatevalue(200 )} >Click</button> <br />
         {/* two way data binding */}
-        <input type="text"  value={variable}  onChange={(e)=>{
+        <input type="text"  value={variable} 
+         onChange={(e)=>{
             let newvalue = e.target.value
             udpatevalue(newvalue)
-        }}/>
+        }}
+        />
          
        </>
    )
