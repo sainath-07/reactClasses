@@ -1,10 +1,10 @@
 
-import Forms from "./10-05-2024/Forms/Forms1";
+import Login from "./10-05-2024/Forms/Loginform";
 
 const Render=()=>{
    return(
     <>
-    <Forms/>
+    <Login/>
     </>
    )
 }
