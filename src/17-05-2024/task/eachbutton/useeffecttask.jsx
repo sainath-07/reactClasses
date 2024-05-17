@@ -14,7 +14,7 @@ const Useeffecttask = () => {
   // fetching the api data
   const fetchapi = async () => {
     let response = await axios.get(`https://fakestoreapi.com/products`);
-    console.log(response.data);
+    // console.log(response.data);
     if (response.status === 200) {
       seteachbtn(response.data);
       setdummydata(response.data);
@@ -30,7 +30,7 @@ const Useeffecttask = () => {
     );
 
     setrealdata(filtereachproduct);
-    console.log(realdata);
+    // console.log(realdata);
   };
 
   return (

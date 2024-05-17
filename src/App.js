@@ -1,5 +1,5 @@
 import Useeffect from "./17-05-2024/class/useEffect/useEffect";
-import Useeffecttask from "./17-05-2024/task/useeffecttask";
+import Useeffecttask from "./17-05-2024/task/eachbutton/useeffecttask";
 
 const Render=()=>{
    return(
