@@ -2,7 +2,7 @@ const Button=(prop)=>{
     const {children,action}=prop
      return(
         <>
-         <button style={{backgroundColor:"black",color:"white"}} onClick={action}>{children}</button>
+         <button style={{backgroundColor:"red",color:"white"}} onClick={action}>{children}</button>
         </>
      )
 }
