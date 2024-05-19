@@ -1,9 +1,17 @@
-import UseRef2 from "./ReactCourse/Functional component hooks/useRef/useRef2";
+import Home from "./ReactCourse/Functional component hooks/usenavigation & useLocation/Home";
+import {BrowserRouter, Route, Routes} from "react-router-dom"
+import About from "./ReactCourse/Functional component hooks/usenavigation & useLocation/about";
 
 const Render=()=>{
    return(
     <>
-    <UseRef2/>
+    <BrowserRouter>
+    
+    <Routes>
+      <Route path="/" Component={Home}></Route>
+      <Route path="/about" Component={About}></Route>
+    </Routes>
+    </BrowserRouter>
     </>
    )
 }
