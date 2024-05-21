@@ -1,30 +1,22 @@
 import { Link } from "react-router-dom";
+import { Navbar, Nav, Container } from "react-bootstrap";
 
-const Navbar = () => {
+const CustomNavbar = () => {
   return (
-    <>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
-        <div className="container-fluid">
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav">
-              <li className="nav-item nav-link">
-                <Link to={"/"}>Home</Link>
-              </li>
-              <li className="nav-item nav-link">
-                <Link to={"/about"}>About</Link>
-              </li>
-              <li className="nav-item nav-link">
-                <Link to={"/setting"}>Setting</Link>
-              </li>
-              <li className="nav-item nav-link">
-                <Link to={"/blog"}>Blog-page</Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </>
+    <Navbar bg="light" expand="lg">
+      <Container>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link as={Link} className="fs-4 text-dark" to="/">Home</Nav.Link>
+            <Nav.Link as={Link} className="fs-4 text-dark"  to="/about">About</Nav.Link>
+            <Nav.Link as={Link} className="fs-4 text-dark"  to="/setting">Setting</Nav.Link>
+            <Nav.Link as={Link}  className="fs-4 text-dark" to="/blog">Blog-page</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 };
 
-export default Navbar;
+export default CustomNavbar;
