@@ -5,8 +5,13 @@ import { passdata, passtheme } from "../Navigationscreen/navigation";
 
 const CustomNavbar = () => {
   // const { name } = useContext(passdata);
-  const { theme, handledarkandlightmodes,count } = useContext(passtheme);
-  // console.log('passeddata : ',name)
+  const { theme,
+     handledarkandlightmodes,
+     count,
+     currentstate
+
+   } = useContext(passtheme);
+  // console.log('currentstate : ',currentstate)
 
   const handledarkmode = () => {
     // Controlling the state which is created globally...
@@ -43,6 +48,9 @@ const CustomNavbar = () => {
               </Nav.Link>
               <Nav.Link as={Link}  className={ ` ${theme && "text-white"} `}to="/blog">
                cart {count}
+              </Nav.Link>
+              <Nav.Link as={Link}  className={ ` ${theme && "text-white"} `}to="/blog">
+               useReducerCount {currentstate.count}
               </Nav.Link>
 
               <button onClick={handledarkmode} className={` ${theme ? "bg-light text-dark" : "bg-dark text-light" }`}

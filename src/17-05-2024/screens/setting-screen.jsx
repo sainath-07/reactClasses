@@ -6,15 +6,24 @@ import { passtheme } from "../Navigationscreen/navigation"
 
 const SettingScreen=()=>{
 
-            const{incrementcount}=useContext(passtheme)
-    const increment=()=>{
+            const{incrementcount,incrementdispatch}=useContext(passtheme)
+    const usestateincrement=()=>{
         incrementcount()
     }
+
+
+    const usereducerinrement=()=>{
+        incrementdispatch()
+    }
+
+
     return(
         <>
             <Navbar/>
         <h1> SettingScreen</h1>
-        <button onClick={increment}>increment</button>
+        <button onClick={usestateincrement}>usestatecountbtn</button>
+        <br />
+        <button className="mt-4" onClick={usereducerinrement}>usereducercountbtn</button>
         </>
     )
 

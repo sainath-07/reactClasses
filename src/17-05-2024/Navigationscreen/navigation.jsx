@@ -8,7 +8,7 @@ import Eachproductdetails from "../screens/prodcutdetails"
 import { createContext, useReducer, useState } from "react"
 
 export const passdata=createContext()
-export const passtheme=createContext()
+export const  passtheme=createContext()
 
 
 // To use globally we have to use the reducerfun outside the component.
@@ -25,7 +25,15 @@ const reducerfun=(state,action)=>{
       case "INCREMENT_ACTION" :
         console.log(state)
          return {...state,count:state.count+1}
-        
+         
+      case "DECREMENT_ACTION" :
+        if(state.count>0)
+         return {...state,count:state.count-1}
+
+      case "CHANGE_NAME" :
+         return {...state,name:state.name="sainath"}
+      case "CHANGE_SUBJECT" :
+         return {...state,subject:[...state.subject," Vue.js",action.payload]}
       default :
       return state
    }
@@ -33,9 +41,15 @@ const reducerfun=(state,action)=>{
 
 
 const initialvalue={
-    count :0
+    count :0,
+    designation: "",
+    name : "veda",
+    subject : ["Angular"," React"],
+
 }
 
+
+// Component
 const NavigationScreen=()=>{
 
    const [currentstate,dispatch]=useReducer(reducerfun,initialvalue)
@@ -45,10 +59,23 @@ const NavigationScreen=()=>{
             type : "INCREMENT_ACTION"
         })
      }
+     const decrementdispatch=()=>{
+        dispatch({
+            type : "DECREMENT_ACTION"
+        })
+     }
+     const changesubject=(subject)=>{
+        dispatch({
+            type : "CHANGE_SUBJECT",
+            payload : subject
+        })
+     }
+     const changename=()=>{
+        dispatch({
+            type : "CHANGE_NAME"
+        })
+     }
 
-
-     console.log(currentstate , "current state")
-     console.log(initialvalue , "initial state")
 
     const[theme,settheme]=useState(false)
     
@@ -72,9 +99,13 @@ const NavigationScreen=()=>{
             incrementcount,
             count,
             incrementdispatch,
+            decrementdispatch,
+            changename,
+            changesubject,
             currentstate
         }}>
         
+    
         <BrowserRouter>
         <Routes>
             <Route path="/" Component={HomeScreen} />
