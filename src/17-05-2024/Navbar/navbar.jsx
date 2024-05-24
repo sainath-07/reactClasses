@@ -52,6 +52,9 @@ const CustomNavbar = () => {
               <Nav.Link as={Link}  className={ ` ${theme && "text-white"} `}to="/blog">
                useReducerCount {currentstate.count}
               </Nav.Link>
+              <Nav.Link as={Link}  className={ ` ${theme && "text-white"} `}to="/usecallback">
+              usecallback 
+              </Nav.Link>
 
               <button onClick={handledarkmode} className={` ${theme ? "bg-light text-dark" : "bg-dark text-light" }`}
               style={{
