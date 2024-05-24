@@ -55,6 +55,9 @@ const CustomNavbar = () => {
               <Nav.Link as={Link}  className={ ` ${theme && "text-white"} `}to="/usecallback">
               usecallback 
               </Nav.Link>
+              <Nav.Link as={Link}  className={ ` ${theme && "text-white"} `}to="/customhook">
+              Customhook 
+              </Nav.Link>
 
               <button onClick={handledarkmode} className={` ${theme ? "bg-light text-dark" : "bg-dark text-light" }`}
               style={{

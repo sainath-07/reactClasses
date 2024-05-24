@@ -6,6 +6,7 @@ import BlogScreen from "../screens/blog-screen"
 import InvalidScreen from "../screens/invalid-screen"
 import Eachproductdetails from "../screens/prodcutdetails"
 import { createContext, useReducer, useState } from "react"
+import Customhookscreen from "../screens/customhookscreen"
 import Usecallbackexample from "../screens/usecallbackscreen"
 
 export const passdata=createContext()
@@ -114,6 +115,7 @@ const NavigationScreen=()=>{
              <Route path="/setting"  Component={SettingScreen}/> 
              <Route path="/blog"  Component={BlogScreen}/> 
              <Route path="/usecallback"  Component={Usecallbackexample}/> 
+             <Route path="/customhook"  Component={Customhookscreen}/> 
              <Route path="/:brand/:productsID" Component={Eachproductdetails}></Route>
              <Route path="*"  Component={InvalidScreen}/> 
         </Routes>
