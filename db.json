@@ -1,13 +1,40 @@
 {
   "users": [
     {
-      "Emailid": "saianth@",
-      "Password": "sdlkjsldkj",
-      "username": "alskdjal",
-      "PhoneNumber": "9010995522",
-      "Country": "Nepal",
+      "Emailid": "sainath@gamil.com",
+      "Password": "sainath",
+      "username": "sainath",
+      "PhoneNumber": "sainathkua",
+      "Country": "India",
       "gender": "male",
       "id": 1
+    },
+    {
+      "Emailid": "vasanth@",
+      "Password": "vasaanth",
+      "username": "vasanth",
+      "PhoneNumber": "9010953233",
+      "Country": "India",
+      "gender": "female",
+      "id": 2
+    },
+    {
+      "Emailid": "sainath@",
+      "Password": "sinathasjl",
+      "username": "alskdjfalskdj",
+      "PhoneNumber": ";alskdjasl",
+      "Country": "India",
+      "gender": "male",
+      "id": 3
+    },
+    {
+      "Emailid": "sainath@gmail.com",
+      "Password": "sainath",
+      "username": "sainath",
+      "PhoneNumber": "9010995323",
+      "Country": "India",
+      "gender": "male",
+      "id": 4
     }
   ]
 }

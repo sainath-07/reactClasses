@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { Link, json, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -10,10 +11,27 @@ const RegisterForm = () => {
   const [Country, setCountry] = useState("India");
   const [gender, setgender] = useState("");
 
+
+  // Email validating.....
+  const [sameemail,setsameemail]=useState(false)
+  const [data,setdata]=useState([])
+
+
+  // Validating the email details........
+  useEffect(()=>{
+    fetchdbjson();
+},[])
+
+const fetchdbjson=async()=>{
+let response=await axios.get('http://localhost:8000/users')
+// console.log(response.data)
+setdata(response.data)
+}
+// console.log(data, "data")
+
   // Navigate to login page.......
   const navigate = useNavigate();
 
-  // password input field.
   const [Emailid, setEmailid] = useState("");
   // validating the password
   // boolean value
@@ -24,12 +42,36 @@ const RegisterForm = () => {
     setEmailid(check);
 
     if (check.length < 6 || !check.includes("@")) {
-      setEmailerror("Enter the valid Email id.");
-      setEmailvalue(true);
-    } else {
-      setEmailerror("");
-      setEmailvalue(false);
-    }
+        setEmailerror("Enter the valid Email id.");
+        setEmailvalue(true);
+      } 
+      else{
+        setEmailvalue(false);
+        let userMailCheck = (data.some(eachobj=>eachobj.Emailid==check))
+        if(userMailCheck){
+          setEmailvalue(true)
+          
+          setEmailerror("Entered email already exists....")
+
+        }
+      }
+
+    // if (check.length < 6 || !check.includes("@")) {
+    //   setEmailerror("Enter the valid Email id.");
+    //   setEmailvalue(true);
+    // } 
+    // else if (data.find(eachobj=>{
+    //       if(eachobj.Emailid==Emailid){
+    //         setdata("Entered email already exists....")
+    //       }
+    //     })){
+          
+    //       setsameemail(true)
+    // }
+    // else {
+    //   setEmailerror("");
+    //   setEmailvalue(false);
+    // }
   };
 
   // password input field.
@@ -45,7 +87,8 @@ const RegisterForm = () => {
     if (check.length > 12 || check.length <= 6) {
       setshowerror("Password must be between 6 to 12 characters.");
       setvalue(true);
-    } else {
+    } 
+    else {
       setshowerror("");
       setvalue(false);
     }
@@ -70,6 +113,8 @@ const RegisterForm = () => {
   };
 
 
+
+
   // Check whether all fields are filled are not...
   const Isvalidate = () => {
     let isproceed = true;
@@ -88,6 +133,7 @@ const RegisterForm = () => {
       isproceed = false;
     }
 
+
     if (!isproceed) {
       toast.error(errormessage);
     }
@@ -96,10 +142,17 @@ const RegisterForm = () => {
   };
 
   // if above function is true then only details will be stored in db
+
+
+console.log(data)
+
+
   const handleform = (e) => {
     e.preventDefault();
 
-    if (Isvalidate()) {
+   
+    if(!sameemail){
+  if(Isvalidate()) {
       let userdetails = {
         Emailid,
         Password,
@@ -109,13 +162,8 @@ const RegisterForm = () => {
         gender,
  
       };
-
       console.log(userdetails);
-
-     
-   
-
-    fetch("  http://localhost:8000/users", {
+    fetch("http://localhost:8000/users", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(userdetails),
@@ -130,6 +178,7 @@ const RegisterForm = () => {
         toast.error("singup faild", err);
       });
     }
+  } 
   };
 
 
@@ -163,6 +212,9 @@ const RegisterForm = () => {
                     {Emailvalue && (
                       <span style={{ color: "red" }}>{Emailerror}</span>
                     )}
+                   
+
+
                   </div>
                 </div>
 
