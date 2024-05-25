@@ -1,19 +1,13 @@
 {
-  "posts": [
+  "users": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "Emailid": "saianth@",
+      "Password": "sdlkjsldkj",
+      "username": "alskdjal",
+      "PhoneNumber": "9010995522",
+      "Country": "Nepal",
+      "gender": "male",
+      "id": 1
     }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

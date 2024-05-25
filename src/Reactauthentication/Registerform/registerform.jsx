@@ -1,39 +1,14 @@
-import { Toast } from "bootstrap";
 import { useContext, useEffect, useState } from "react";
 import { Link, json, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { eachinput } from "../utillis/eachinput";
-import axios from 'axios';
 
 const RegisterForm = () => {
-
-//   useEffect(()=>{
-//     fetchdb()
-//   },[])
-
-
-
-
-
-
-// const fetchdb=async()=>{
-//   let res=await axios.get("http://localhost:3000/posts")
-//  console.log(res)
-      
-// }
-
-
-
-
-
-
   const [emailvalidate, setemailvalidate] = useState([]);
   // useState, passed the state to each and every input element in the form
 
   const [username, setusername] = useState("");
   const [Country, setCountry] = useState("India");
   const [gender, setgender] = useState("");
-  const [Address, setAddress] = useState("");
 
   // Navigate to login page.......
   const navigate = useNavigate();
@@ -94,6 +69,8 @@ const RegisterForm = () => {
     }
   };
 
+
+  // Check whether all fields are filled are not...
   const Isvalidate = () => {
     let isproceed = true;
     let errormessage = "please fill input fields in form";
@@ -118,10 +95,11 @@ const RegisterForm = () => {
     return isproceed;
   };
 
+  // if above function is true then only details will be stored in db
   const handleform = (e) => {
     e.preventDefault();
 
-    // if (Isvalidate()) {
+    if (Isvalidate()) {
       let userdetails = {
         Emailid,
         Password,
@@ -129,7 +107,7 @@ const RegisterForm = () => {
         PhoneNumber,
         Country,
         gender,
-        Address,
+ 
       };
 
       console.log(userdetails);
@@ -137,7 +115,7 @@ const RegisterForm = () => {
      
    
 
-    fetch("http://localhost:3000/posts", {
+    fetch("  http://localhost:8000/users", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(userdetails),
@@ -151,8 +129,9 @@ const RegisterForm = () => {
         console.log(err);
         toast.error("singup faild", err);
       });
+    }
   };
-// }
+
 
 
 
