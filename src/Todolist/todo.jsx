@@ -50,7 +50,7 @@ const Todolist = () => {
           return (
             <React.Fragment key={index}>
               <div className="container w-75 d-flex flex-wrap  justify-content-between border border-danger h-100  mt-2">
-                <p>{eachlist}</p>
+                <p contentEditable="true">{eachlist}</p>
                 <div className="d-flex gap-2 align-items-center">
                   <button type="button"  className="btn btn-primary ">
                     Update
