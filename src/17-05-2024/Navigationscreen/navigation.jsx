@@ -8,6 +8,10 @@ import Eachproductdetails from "../screens/prodcutdetails"
 import { createContext, useReducer, useState } from "react"
 import Customhookscreen from "../screens/customhookscreen"
 import Usecallbackexample from "../screens/usecallbackscreen"
+import Addtocart from "../screens/addtocard"
+import { Toast } from "react-bootstrap"
+import { toast } from "react-toastify";
+
 
 export const passdata=createContext()
 export const  passtheme=createContext()
@@ -51,11 +55,22 @@ const initialvalue={
 }
 
 
-// Component
+//----------> Component
 const NavigationScreen=()=>{
 
+    const[theme,settheme]=useState(false)
+    const [card,setcard]=useState([])
    const [currentstate,dispatch]=useReducer(reducerfun,initialvalue)
-    
+
+   const [count,setcount]=useState(0)
+
+
+   const cardhandler=(obj)=>{
+         setcard([...card,obj])
+         toast("registered successfully");
+
+   }
+     
      const incrementdispatch=()=>{
         dispatch({
             type : "INCREMENT_ACTION"
@@ -79,19 +94,20 @@ const NavigationScreen=()=>{
      }
 
 
-    const[theme,settheme]=useState(false)
     
     
     const handledarkandlightmodes=()=>{
         settheme(!theme)
     }
     
-    const [count,setcount]=useState(0)
 
     const incrementcount=()=>{
         setcount(count+1)
     }
 
+
+
+ 
 
     return(
         <>
@@ -104,7 +120,10 @@ const NavigationScreen=()=>{
             decrementdispatch,
             changename,
             changesubject,
-            currentstate
+            cardhandler,
+            card,
+            setcard,
+            currentstate,
         }}>
         
     
@@ -116,6 +135,7 @@ const NavigationScreen=()=>{
              <Route path="/blog"  Component={BlogScreen}/> 
              <Route path="/usecallback"  Component={Usecallbackexample}/> 
              <Route path="/customhook"  Component={Customhookscreen}/> 
+             <Route path="/Addtocart"  Component={Addtocart}/> 
              <Route path="/:brand/:productsID" Component={Eachproductdetails}></Route>
              <Route path="*"  Component={InvalidScreen}/> 
         </Routes>
