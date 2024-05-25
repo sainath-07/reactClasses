@@ -10,7 +10,7 @@ import Todolist from "./09-05-2024/task/Todo/Todolist.";
 const Render=()=>{
    return(
     <>
-    <Counter/>
+    <Timer/>
     </>
    )
 }
