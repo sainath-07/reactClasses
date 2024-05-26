@@ -46,7 +46,7 @@ const reducerfun=(state,action)=>{
          return {...state,count:state.count-1}
 
       case "CHANGE_NAME" :
-         return {...state,name:state.name ="sainath"}
+         return {...state,name:"sainath"}
       case "CHANGE_SUBJECT" :
          return {...state,subject:[...state.subject," Vue.js",action.payload]}
       default :
