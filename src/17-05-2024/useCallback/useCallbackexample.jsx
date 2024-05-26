@@ -1,19 +1,20 @@
 import { useCallback, useState } from "react"
-import Todoviewer from "./todoviwer"
 import UsecallbackHeading from "./UsecallbackHeading"
+import Todoviewer from "./todoviwer"
 
 const UseCallBackExample=()=>{
 
              
             const [todo,settodo]=useState(["May 23 react class"])
 
-                 
-
-            const addtodos=useCallback(()=>{
-               settodo([...todo,"new Product"])
-          },[todo])
-
             const [salary,setsalary]=useState(1000)
+        
+         const addtodos= useCallback(()=>{
+            settodo([...todo,"new Product"])
+         },[todo])
+
+         
+
 
             const salincrement =()=>{
                setsalary(salary+1000)

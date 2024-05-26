@@ -6,7 +6,7 @@ const Todoviewer=({todo,addtodosfun})=>{
     return(
         <>
         <h1>Todoviewer</h1>
-        <button onClick={addtodosfun}>click</button>
+        <button onClick={addtodosfun}>added todo viewer</button>
 
         {
             todo.map((eachtodo,index)=>{
