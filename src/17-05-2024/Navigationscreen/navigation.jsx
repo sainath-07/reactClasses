@@ -9,19 +9,28 @@ import { createContext, useReducer, useState } from "react"
 import Customhookscreen from "../screens/customhookscreen"
 import Usecallbackexample from "../screens/usecallbackscreen"
 import Addtocart from "../screens/addtocard"
-import { Toast } from "react-bootstrap"
-import { toast } from "react-toastify";
+
 
 
 export const passdata=createContext()
 export const  passtheme=createContext()
 
 
+
+const initialvalue={
+    count :0,
+    designation: "",
+    name : "veda",
+    subject : ["Angular"," React"],
+    
+
+}
+
+
 // To use globally we have to use the reducerfun outside the component.
 
 // reducerfun will accept the two parameters 1. state 2. action
 const reducerfun=(state,action)=>{
-
 //    action means dispatch value , which is object 
 // action={
 //     type : "INCREMENT_ACTION"
@@ -37,7 +46,7 @@ const reducerfun=(state,action)=>{
          return {...state,count:state.count-1}
 
       case "CHANGE_NAME" :
-         return {...state,name:state.name="sainath"}
+         return {...state,name:state.name ="sainath"}
       case "CHANGE_SUBJECT" :
          return {...state,subject:[...state.subject," Vue.js",action.payload]}
       default :
@@ -46,13 +55,7 @@ const reducerfun=(state,action)=>{
 }
 
 
-const initialvalue={
-    count :0,
-    designation: "",
-    name : "veda",
-    subject : ["Angular"," React"],
 
-}
 
 
 //----------> Component
@@ -67,7 +70,7 @@ const NavigationScreen=()=>{
 
    const cardhandler=(obj)=>{
          setcard([...card,obj])
-         toast("registered successfully");
+        
 
    }
      

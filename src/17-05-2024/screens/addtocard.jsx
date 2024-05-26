@@ -5,7 +5,7 @@ import { passtheme } from "../Navigationscreen/navigation";
 const Addtocart = () => {
 
 
-  const [cartcount,setcartcount]=useState(0)
+  const [cartcount,setcartcount]=useState(1)
 
   const { card,setcard } = useContext(passtheme);
   console.log(card.length)
@@ -16,24 +16,23 @@ const Addtocart = () => {
   }
 
 
-  const useraction=(value)=>{
-   
-        switch(value){
-          case "INCREMENT_ACTION"  :
-            setcartcount(cartcount+1)
-            break
-          case "DECREMENT_ACTION" :
-             if(cartcount>=1) setcartcount(cartcount-1)
-              break
-             case "RESET":
-                setcartcount(0)
-     
-      }
-
+   const useraction=(value)=>{
+       switch(value){
+        case 'INCREMENT_ACTION':
+          setcartcount(cartcount+1)
+          break
+        case 'RESET':
+          setcartcount(0)
+          break
+        case 'DECREMENT_ACTION':
+          if(cartcount>1) setcartcount(cartcount-1)
+          break
+       }
+   }
   
- }
-   
 
+
+   
 
 
   return (
@@ -54,7 +53,7 @@ const Addtocart = () => {
                 <div  className="d-flex justify-content-end">
                    <div className="border border-2 me-2 px-2">{cartcount}</div>
                   <button className="border border-2" onClick={()=>useraction("INCREMENT_ACTION",index)}>+</button>
-                  <button  className="border border-2" onClick={()=>useraction("RESET",index)}>0</button>
+                  {/* <button  className="border border-2" onClick={()=>useraction("RESET",index)}>0</button> */}
                   <button  className="border border-2" onClick={()=>useraction("DECREMENT_ACTION",index)}>-</button>
                 </div>
                 <button  className="w-25 mx-auto border border-none mb-2  text-white bg-danger" onClick={()=>deleteproduct(index)}>Remove</button>
