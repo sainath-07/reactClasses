@@ -1,14 +1,21 @@
+
 import Todolist from "./Todolist/todo";
 
 
 const Render=()=>{
+
+
+
    return(
     <>
+      
+    <Todolist/>
 
-  <Todolist/>
+
     
     </>
    )
 }
 
 export default Render;
+

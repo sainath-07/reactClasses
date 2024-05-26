@@ -5,7 +5,6 @@ import { MdDelete } from "react-icons/md";
 const Todolist = () => {
   const [text, settext] = useState("");
   const [list, setlist] = useState([]);
-  const [duplist, setduplist] = useState([]);
   const [value, setvalue] = useState(null);
 
   const [updatecontent, setupdatecontent] = useState(true);
@@ -17,7 +16,6 @@ const Todolist = () => {
   const addtask = () => {
     if (text != "" && text != false) {
       setlist([...list, text]);
-      setduplist([...list, text]);
       setvalue(false);
       settext("");
     } else {
