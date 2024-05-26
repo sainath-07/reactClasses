@@ -10,15 +10,15 @@ const Forms = () => {
   const formsubmit = (e) => {
     e.preventDefault();
     const usercheck = usernameref.current.value;
+    
     const userpasscheck = usernameref.current.value;
-
+    
     if (usercheck.length < 3 || userpasscheck.length<3) {
       updateinitial(true);
     } else {
       alert("Login successfull...");
     }
   };
-
   return (
     <>
       <form onSubmit={formsubmit}>
