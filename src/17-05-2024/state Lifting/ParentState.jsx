@@ -1,5 +1,5 @@
 import { useState } from "react"
-import ChildState from "./ChildState"
+import ChildState, { Text } from "./ChildState"
 
 const ParentState=()=>{
 
@@ -25,7 +25,7 @@ const ParentState=()=>{
         <>
         <h1>Parentstate</h1>
         <h1>{count}</h1>
-        <ChildState text={"counterapp"}/>
+        <Text text={"text "}/>
         <ChildState press={()=>handlecount("INCREMENT")}>Increment</ChildState>
         <ChildState press={()=>handlecount("DECREMENT")}>Decrement</ChildState>
         <ChildState press={()=>handlecount("RESET")}>Reset</ChildState>
