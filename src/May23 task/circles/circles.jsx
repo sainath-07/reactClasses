@@ -1,37 +1,27 @@
 import React, { useState } from "react";
-import Cricle from "../../30-04-2024/Reactspinners/spinner";
 import { Circles } from "react-loader-spinner";
 
 const CriclesTask = () => {
-   const[count,setcount]=useState(1)
-   const[checkcolorcount,setcheckcolorcount]=useState(0)
+  const [count, setcount] = useState(1);
+  const [checkcolorcount, setcheckcolorcount] = useState(0);
   const [initialvalue, setinitialvalue] = useState(null);
   const [content, setcontent] = useState([`${count}`]);
-//   console.log(content)
-
-
-
 
   const addcricles = () => {
     setinitialvalue(true);
-    setcount(count+1)
-    // console.log(count," count ")
-    setcontent([...content,`${count}`]);
-    // setdupinitialvalue([...content, "two"]);
+    setcount(count + 1);
+    setcontent([...content, `${count}`]);
   };
 
   const [color, setcolor] = useState(false);
-//   console.log(color ," color value ")
 
-  const colorchange=(match)=>{
-    setcheckcolorcount(checkcolorcount+1)
-    const filterdata=content.filter((each,index)=>index===match)
-    //  console.log(filterdata," filterdata")
-    setcolor(filterdata)
-}
+  const colorchange = (match) => {
+    setcheckcolorcount(checkcolorcount + 1);
+    const filterdata = content.filter((each, index) => index === match);
+    setcolor(filterdata);
+  };
 
-
-console.log(content)
+  console.log(content);
 
   return (
     <>
@@ -42,31 +32,41 @@ console.log(content)
       <button onClick={addcricles}>Click to add cricles</button>
 
       {initialvalue &&
-        content.map((eachitem,index) => {
+        content.map((eachitem, index) => {
           return (
             <React.Fragment key={index}>
-                {/* <Cricle className="border border-success"/> */}
-
-                {
-                    index >=1 &&
-                    <h1
-                    className="border border-primary"
-                   onClick={()=>colorchange(index)}
-                    style={{
-                    color:`${(color==eachitem) && "red"}`,
-                    backgroundColor:`${(color==eachitem) && "black"}`
-                    }}
-                   >
-                     {/* {eachitem} */}
-                     <Circles />
-                   </h1>
-                }
-             
+              {index >= 1 && (
+                <h1
+                  className="border border-primary"
+                  
+                  style={{
+                    color: `${color == eachitem && "red"}`,
+                    // backgroundColor: `${color == eachitem && "black"}`,
+                  }}
+                >
+                 
+                  <Cricle onClick={() => colorchange(index)} eachitem={eachitem} />
+                </h1>
+              )}
             </React.Fragment>
           );
         })}
     </>
   );
 };
+
+
+const Cricle=({onClick,eachitem,color})=>{
+  return(
+    <div style={{
+      borderRadius:"50px",
+      border:"2px solid black",
+      height:"75px",
+      width:"75px",
+      backgroundColor: `${color == eachitem && "red"}`,
+    }}  
+    onClick={onClick}></div>
+  )
+}
 
 export default CriclesTask;
