@@ -16,29 +16,59 @@ const Addtocart = () => {
   }
 
 
-   const useraction=(value)=>{
+
+   const useraction=(value,i)=>{
        switch(value){
         case 'INCREMENT_ACTION':
-          setcartcount(cartcount+1)
+         const cardincrease= card.map((each,index)=>{
+            if(index==i){
+               each.count++
+               each.totalprice=each.count*each.price
+               return each
+
+            }
+            else{
+              return each
+            }
+          })
+             setcard(cardincrease)
+
           break
         case 'RESET':
           setcartcount(0)
           break
         case 'DECREMENT_ACTION':
-          if(cartcount>1) setcartcount(cartcount-1)
+          // if(cartcount>1) setcartcount(cartcount-1)
+            const cardreducecount= card.map((each,index)=>{
+              if(index==i){
+                if(each.count>1) {
+                  each.count--
+                  each.totalprice=each.count*each.price
+                  return each
+
+                }
+                else{
+                  return each
+                }
+              }
+              else{
+                return each
+              }
+            })
+               setcard(cardreducecount)
           break
        }
    }
   
 
-
+console.log(card)
    
 
 
   return (
     <div className="container d-flex mt-2 flex-column justify-content-center   border border-success">
       {card.map((eachproduct, index) => {
-        const { thumbnail ,title,availabilityStatus,brand ,category} = eachproduct;
+        const { thumbnail ,title,availabilityStatus,brand ,category,totalprice,count} = eachproduct;
         return (
           <React.Fragment key={index}>
             <div className="row d-flex justify-content-center">
@@ -51,9 +81,11 @@ const Addtocart = () => {
                 <p className="text-wrap">brand : {brand}</p>
                 <p className="text-wrap">category : {category}</p>
                 <div  className="d-flex justify-content-end">
-                   <div className="border border-2 me-2 px-2">{cartcount}</div>
+                   <div className="border border-2 me-2 px-2">{count}</div>
+                   <div className="border border-2 me-2 px-2">{totalprice}</div>
+               
                   <button className="border border-2" onClick={()=>useraction("INCREMENT_ACTION",index)}>+</button>
-                  {/* <button  className="border border-2" onClick={()=>useraction("RESET",index)}>0</button> */}
+                  <button  className="border border-2" onClick={()=>useraction("RESET",index)}>0</button>
                   <button  className="border border-2" onClick={()=>useraction("DECREMENT_ACTION",index)}>-</button>
                 </div>
                 <button  className="w-25 mx-auto border border-none mb-2  text-white bg-danger" onClick={()=>deleteproduct(index)}>Remove</button>

@@ -69,7 +69,8 @@ const NavigationScreen=()=>{
 
 
    const cardhandler=(obj)=>{
-         setcard([...card,obj])
+   const res={...obj,count:1,totalprice:obj.price}
+         setcard([...card,res])
         
 
    }
