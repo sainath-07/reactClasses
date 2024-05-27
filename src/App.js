@@ -5,14 +5,14 @@ import Displaydata from "./17-05-2024/customhook with api/accessingcustomhook";
 import CallbackParent from "./17-05-2024/newusecallback/callbackparent";
 import ParentState from "./17-05-2024/state Lifting/ParentState";
 import UseCallBackExample from "./17-05-2024/useCallback/useCallbackexample";
+import RandomCricles from "./Cricles task/RandomCricles";
 
 const Render=()=>{
    return(
     <>
 
-    <ParentState/>
-   
-    {/* <CallbackParent/> */}
+    <RandomCricles/>
+
     </>
    )
 }
