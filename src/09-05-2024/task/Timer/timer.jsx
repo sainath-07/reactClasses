@@ -3,48 +3,36 @@ import { useState } from "react"
 const Timer=()=>{
 
  const [count,setcount]=useState(0)
+ const [value,setvalue]=useState(null)
+
+const starttimer=()=>{
+  
+
+      
+           let demo=setInterval(() => {
+                setcount(count=>count+1)
+             }, 500);
+             setvalue(demo)
+
+             
 
 
 
-const timer =(type)=>{
-
-   let timerstart= setInterval(()=>{
-        if(type!='stop'){
-            setcount(count=>count+1)
-        }
-        else{
-            clearInterval(timerstart)
-            console.log('clear')
-        }
-    },1000)
+        
 }
 
 
-// const stopTimer =()=>{
-//     // console.log("")
-//     clearInterval(startTImer)
-// }
-
-
-// let demo=setInterval(startTImer, 500);
-//     const startTImer =()=>{
-//         setcount(count=>count+1)
-//     }
-
-// const stopTimer =()=>{
-  
-//     clearInterval(demo)
-// }
-
-
-
+const stoptimer=()=>{
+    clearInterval(value)
+    setvalue(null)
+}
 
 
     return(
         <>
         <h1>cont : {count}</h1>
-        <button onClick={timer}>start</button>
-        <button onClick={()=>timer('stop')}>stop</button>
+        <button onClick={starttimer}>start</button>
+        <button onClick={stoptimer}>stop</button>
         </>
     )
 }
