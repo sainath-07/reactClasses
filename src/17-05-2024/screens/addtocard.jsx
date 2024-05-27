@@ -1,94 +1,82 @@
 import React, { useContext, useState } from "react";
 import { passtheme } from "../Navigationscreen/navigation";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Addtocart = () => {
-
-
-  const [cartcount,setcartcount]=useState(1)
-
-  const { card,setcard } = useContext(passtheme);
+  const { card, setcard } = useContext(passtheme);
   console.log(card.length)
 
-  const deleteproduct=(match)=>{
-    const filterdata=card.filter((eachprod,i)=>i!==match)
+  const deleteproduct = (match) => {
+    const filterdata = card.filter((eachprod, i) => i !== match)
     setcard(filterdata)
   }
 
+  const useraction = (value, i) => {
+    switch (value) {
+      case 'INCREMENT_ACTION':
+        const cardincrease = card.map((each, index) => {
+          if (index === i) {
+            each.count++
+            let num = each.count * each.price
+            each.totalprice = Math.round(num)
+            return each
+          } else {
+            return each
+          }
+        })
+        setcard(cardincrease)
+        break
 
-
-   const useraction=(value,i)=>{
-       switch(value){
-        case 'INCREMENT_ACTION':
-         const cardincrease= card.map((each,index)=>{
-            if(index==i){
-               each.count++
-               each.totalprice=each.count*each.price
-               return each
-
-            }
-            else{
+      case 'DECREMENT_ACTION':
+        const cardreducecount = card.map((each, index) => {
+          if (index === i) {
+            if (each.count > 1) {
+              each.count--
+              let num = each.count * each.price
+              each.totalprice = Math.round(num)
+              return each
+            } else {
               return each
             }
-          })
-             setcard(cardincrease)
+          } else {
+            return each
+          }
+        })
+        setcard(cardreducecount)
+        break
+    }
+  }
 
-          break
-        case 'RESET':
-          setcartcount(0)
-          break
-        case 'DECREMENT_ACTION':
-          // if(cartcount>1) setcartcount(cartcount-1)
-            const cardreducecount= card.map((each,index)=>{
-              if(index==i){
-                if(each.count>1) {
-                  each.count--
-                  each.totalprice=each.count*each.price
-                  return each
-
-                }
-                else{
-                  return each
-                }
-              }
-              else{
-                return each
-              }
-            })
-               setcard(cardreducecount)
-          break
-       }
-   }
-  
-
-console.log(card)
-   
-
+  console.log(card)
 
   return (
-    <div className="container d-flex mt-2 flex-column justify-content-center   border border-success">
+    <div className="container mt-4">
+      <h3 className="text-center">Add to cart page&#128722;</h3>
       {card.map((eachproduct, index) => {
-        const { thumbnail ,title,availabilityStatus,brand ,category,totalprice,count} = eachproduct;
+        const { thumbnail, title, availabilityStatus, price, brand, category, totalprice, count } = eachproduct;
         return (
           <React.Fragment key={index}>
-            <div className="row d-flex justify-content-center">
-              <div className="col-2  border border-danger">
-                <img src={thumbnail} width={"100%"} alt="" />
+            <div className="row mb-4 p-3 border rounded shadow-sm bg-light">
+              <div className="col-md-3 col-lg-2 mb-3 mb-md-0">
+                <img src={thumbnail} className="img-fluid rounded" alt={title} />
               </div>
-              <div className="col-7 border d-flex flex-column border-dark">
-                <p className="text-wrap">availabilityStatus : {availabilityStatus}</p>
-                <p className="text-wrap">title : {title}</p>
-                <p className="text-wrap">brand : {brand}</p>
-                <p className="text-wrap">category : {category}</p>
-                <div  className="d-flex justify-content-end">
-                   <div className="border border-2 me-2 px-2">{count}</div>
-                   <div className="border border-2 me-2 px-2">{totalprice}</div>
-               
-                  <button className="border border-2" onClick={()=>useraction("INCREMENT_ACTION",index)}>+</button>
-                  <button  className="border border-2" onClick={()=>useraction("RESET",index)}>0</button>
-                  <button  className="border border-2" onClick={()=>useraction("DECREMENT_ACTION",index)}>-</button>
+              <div className="col-md-9 col-lg-10">
+                <div className="d-flex flex-column">
+                  <p><strong>Availability Status:</strong> {availabilityStatus}</p>
+                  <p><strong>Title:</strong> {title}</p>
+                  <p><strong>Brand:</strong> {brand}</p>
+                  <p><strong>Category:</strong> {category}</p>
+                  <p><strong>Price:</strong> &#8377;{Math.round(price)}</p>
+                  <div className="d-flex align-items-center mb-3">
+                    <div className="me-3">Quantity: <span className="badge bg-secondary">{count}</span></div>
+                    <div className="me-3">Total Price: <span className="badge bg-secondary">&#8377;{totalprice}</span></div>
+                    <button className="btn btn-sm btn-outline-success me-2" onClick={() => useraction("INCREMENT_ACTION", index)}>+</button>
+                    <button className="btn btn-sm btn-outline-danger" onClick={() => useraction("DECREMENT_ACTION", index)}>-</button>
+                  </div>
+                  <div className="d-flex justify-content-end">
+                    <button className="btn btn-danger" onClick={() => deleteproduct(index)}>Remove</button>
+                  </div>
                 </div>
-                <button  className="w-25 mx-auto border border-none mb-2  text-white bg-danger" onClick={()=>deleteproduct(index)}>Remove</button>
               </div>
             </div>
           </React.Fragment>

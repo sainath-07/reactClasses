@@ -66,11 +66,16 @@ const NavigationScreen=()=>{
    const [currentstate,dispatch]=useReducer(reducerfun,initialvalue)
 
    const [count,setcount]=useState(0)
+   
+  // conditionally rendering the button addtocart or gotocart......
+
+  const [checkvalue,setcheckvalue]=useState(true)
 
 
    const cardhandler=(obj)=>{
-   const res={...obj,count:1,totalprice:obj.price}
+   const res={...obj,count:1,totalprice:Math.round(obj.price)}
          setcard([...card,res])
+         setcheckvalue(false)
         
 
    }
@@ -128,6 +133,8 @@ const NavigationScreen=()=>{
             card,
             setcard,
             currentstate,
+            setcheckvalue,
+            checkvalue
         }}>
         
     

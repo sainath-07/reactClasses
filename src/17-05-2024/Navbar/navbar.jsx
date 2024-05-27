@@ -16,14 +16,12 @@ const CustomNavbar = () => {
 
   return (
     <nav
-      className={
-        theme
-          ? "navbar navbar-expand-sm text-white bg-dark "
-          : "navbar navbar-expand-sm bg-light navbar-light"
-      }
-    >
-      <Navbar expand="lg">
-        <Container>
+    className={`d-flex position-fixed top-0 z-1 w-100 justify-content-center navbar navbar-expand-sm ${theme ? 'text-white bg-dark' : 'bg-light navbar-light'}`}
+  >
+  
+  
+      <Navbar expand="lg" >
+        <Container className="d-flex justify-content-center"  >
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">

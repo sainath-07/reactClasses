@@ -6,13 +6,14 @@ import { Container, Row, Col, Card, Button, Spinner, Nav } from "react-bootstrap
 import { eachobjectempty } from "../utillis/functions";
 import SyncLoader from 'react-spinners/SyncLoader';
 import "./images.css"
+import { passtheme } from "../Navigationscreen/navigation";
 
 
-    
-    
+
 // Component
 const HomeScreen = () => {
   const [productlist, setproducts] = useState([]);
+  const {setcheckvalue}=useContext(passtheme)
 
 console.log(productlist)
   useEffect(() => {
@@ -24,24 +25,27 @@ console.log(productlist)
     setproducts(response.data.products);
   };
 
+  const changesetvalue=()=>{
+    setcheckvalue(true)
+  }
 
 
   return (
     <>
       <Navbar />
-      <Container fluid className="mt-4">
+      <Container fluid className="mt-5">
         
         {
             eachobjectempty(productlist) ? 
             <>
-            <Row className="d-flex flex-wrap ">
+            <Row className="d-flex flex-wrap d-flex justify-content-center">
           {
 
             
             productlist.map((eachproduct) => {
               const { brand, thumbnail, id, title, price } = eachproduct;
               return (
-                <Col key={id} md={3} className="mb-4  d-flex flex-wrap justify-content-center  images">
+                <Col key={id} md={3} className="mb-4 mt-5 d-flex flex-wrap justify-content-center  images">
                   <Card className="w-100">
                    
 
@@ -64,7 +68,7 @@ console.log(productlist)
                       </div>
                       <div className="d-flex justify-content-center">
                  
-                        <Button variant="warning" as={Link} to={`/${brand}/${id}`}>
+                        <Button onClick={changesetvalue} variant="warning" as={Link} to={`/${brand}/${id}`}>
                           View Product
                         </Button>
                       </div>

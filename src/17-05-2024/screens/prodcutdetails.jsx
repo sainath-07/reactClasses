@@ -4,17 +4,16 @@ import { Link, useParams } from "react-router-dom";
 import { Container, Row, Col, Card, Carousel, Button } from "react-bootstrap";
 import { eachobjectempty } from "../utillis/functions";
 import { passtheme } from "../Navigationscreen/navigation";
-import "./Prodcutdetails.css"
-
-
+import "./Prodcutdetails.css";
+import HashLoader from 'react-spinners/HashLoader';
 
 
 const Eachproductdetails = () => {
   const [eachproductitem, seteachproductitem] = useState({});
-  const { cardhandler, card } = useContext(passtheme);
+  const { cardhandler, card,checkvalue } = useContext(passtheme);
   const { productsID } = useParams();
-//   const url= useParams();
-// console.log(url)
+  //   const url= useParams();
+  // console.log(url)
   // console.log(productsID);
 
   useEffect(() => {
@@ -77,7 +76,7 @@ const Eachproductdetails = () => {
                 <Card.Body>
                   <Card.Title>{title}</Card.Title>
                   <Card.Text>
-                    <strong>Price:</strong> ${price}
+                    <strong>Price:</strong> ${Math.round(price)}
                   </Card.Text>
                   <Card.Text>
                     <strong>Discount:</strong> {discountPercentage}%
@@ -95,21 +94,35 @@ const Eachproductdetails = () => {
                     <strong>Category:</strong> {category}
                   </Card.Text>
                   <div className="d-flex gap-2 mt-4 ">
-                   
-                      <Button
-                        onClick={() => cardhandler(eachproductitem)}
-                        variant="primary"
+                    {checkvalue ? (
+                      <>
+                        <Button
+                          onClick={() => cardhandler(eachproductitem)}
+                          variant="primary"
+                          size="lg"
+                        >
+                          Add to Cart
+                        </Button>
+                      </>
+                    ) : (
+                      <>
+                       <Button
+                        // onClick={() => cardhandler(eachproductitem)}
+                        variant="warning"
                         size="lg"
                       >
-                        Add to Cart
+                       
+
+                        <Link className="text-white text-decoration-none" to={'/Addtocart'}> Go to cart</Link>
                       </Button>
-                    
+                      </>
+                    )}
+                 
+
                     <Button variant="success" size="lg">
                       Buy Now
                     </Button>
-                    <Button variant="warning" size="lg">
-                      <Link className="text-decoration-none text-white" to={'/Addtocart'}>Go to Cart</Link>
-                    </Button>
+                  
                   </div>
                 </Card.Body>
               </Card>
@@ -117,7 +130,9 @@ const Eachproductdetails = () => {
           </Row>
         </>
       ) : (
-        <h1>Data is loading.....</h1>
+        <h1 className="d-flex justify-content-center">
+         <HashLoader color="#36d7b7" size={100} />
+        </h1>
       )}
     </Container>
   );
