@@ -6,12 +6,13 @@ import CallbackParent from "./17-05-2024/newusecallback/callbackparent";
 import ParentState from "./17-05-2024/state Lifting/ParentState";
 import UseCallBackExample from "./17-05-2024/useCallback/useCallbackexample";
 import RandomCricles from "./Cricles task/RandomCricles";
+import Demo from "./Practise/Demo";
 
 const Render=()=>{
    return(
     <>
 
-    <NavigationScreen/>
+    <Demo/>
 
     </>
    )
