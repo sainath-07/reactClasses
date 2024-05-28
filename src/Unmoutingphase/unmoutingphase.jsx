@@ -13,9 +13,6 @@ class Unmouting extends Component{
 
     }
 
-
-
-
     render(){
         return(
             <>
@@ -48,14 +45,19 @@ class Unmouting extends Component{
 
 export default Unmouting
 
-const Subchild=()=>{
-    return(
-        <>
-        <h1>Subchild</h1>
+class Subchild extends Component{
+
+    componentWillUnmount(){
+        console.log("ComponentWillUnMount")
+    }
 
 
-
-        <img src="https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/1.png"  width={"100px"}  className="border border-danger" alt="" />
-        </>
-    )
+    render(){
+        return(
+            <>
+            <h1>Subchild</h1>
+            <img src="https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/1.png"  width={"100px"}  className="border border-danger" alt="" />
+            </>
+        )
+    }
 }
