@@ -10,13 +10,14 @@ import 'react-toastify/dist/ReactToastify.css';
 // Redux...
 import { Provider } from 'react-redux'
 import { reduxStore } from './ReduxCourse/May27/Redux/store.jsx';
+import { May28Store } from './ReduxCourse/May28/Redux/store.jsx';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
 
 
-      <Provider store={reduxStore}>
+      <Provider store={May28Store}>
 
         <App />
       </Provider>
