@@ -15,6 +15,12 @@ const UseCallBackExample=()=>{
 
          
 
+         // const addtodos=()=>{
+         //     settodo([...todo,"added"])
+         // }
+
+
+
 
             const salincrement =()=>{
                setsalary(salary+1000)
