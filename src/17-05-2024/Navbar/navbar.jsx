@@ -71,6 +71,14 @@ const CustomNavbar = () => {
                 Customhook
               </Nav.Link>
               
+              <Nav.Link
+                as={Link}
+                className={` ${theme && "text-white"} `}
+                to="/ReduxScreen"
+              >
+                ReduxScreen
+              </Nav.Link>
+              
 
               <button
                 onClick={handledarkmode}

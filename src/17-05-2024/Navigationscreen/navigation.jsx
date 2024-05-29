@@ -9,6 +9,7 @@ import { createContext, useReducer, useState } from "react"
 import Customhookscreen from "../screens/customhookscreen"
 import Usecallbackexample from "../screens/usecallbackscreen"
 import Addtocart from "../screens/addtocard"
+import ReduxScreen from "../screens/ReduxScreen"
 
 
 
@@ -147,6 +148,7 @@ const NavigationScreen=()=>{
              <Route path="/usecallback"  Component={Usecallbackexample}/> 
              <Route path="/customhook"  Component={Customhookscreen}/> 
              <Route path="/Addtocart"  Component={Addtocart}/> 
+             <Route path="/ReduxScreen"  Component={ReduxScreen}/> 
              <Route path="/:brand/:productsID" Component={Eachproductdetails}></Route>
              <Route path="*"  Component={InvalidScreen}/> 
         </Routes>
