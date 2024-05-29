@@ -4,8 +4,7 @@ import { handleruser } from "../Redux/actions";
 import { useState } from "react";
 
 const May28 = () => {
-
-    const [set,setvalue]=useState(true)
+  const [set, setvalue] = useState(true);
   const {
     books: { bookCount },
     profile: {
@@ -39,11 +38,8 @@ const May28 = () => {
         name: "Veda",
         email: "Veda@gmail.com",
         mobileno: 2057896,
-        value:!value,
-        
-         
-      }),
-      setvalue(!set)
+      })
+      //   setvalue(!set)
     );
   };
 
@@ -57,7 +53,7 @@ const May28 = () => {
       <hr />
       <h1>User details</h1>
 
-      {set==value ? (
+      {/* {set==value ? (
         <>
           <h4>{email}</h4>
           <h4>{mobileno}</h4>
@@ -69,13 +65,13 @@ const May28 = () => {
           <h4>{mobileno}</h4>
           <h4>{name}</h4>
          </>
-      )}
-      {/* <h4>{email}</h4>
-        <h4>{mobileno}</h4>
-        <h4>{name}</h4> */}
+      )} */}
+      <h4>{email}</h4>
+      <h4>{mobileno}</h4>
+      <h4>{name}</h4>
 
       <button onClick={changeuserdetails}>
-        {set ? <>sainath</> : <>veda</>}
+        {set ? <>click</> : <>veda</>}
       </button>
     </>
   );

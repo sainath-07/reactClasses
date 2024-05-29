@@ -12,7 +12,10 @@ export const profileReducer=(state=initialState,action)=>{
       switch(action.type){
         case "PROFILE_UPDATE" :
             return {
-                ...initialState,profile : action.payload
+                ...initialState,
+                profile : action.payload,
+                
+
             }
            
         default :
