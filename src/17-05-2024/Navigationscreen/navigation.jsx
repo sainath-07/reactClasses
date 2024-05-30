@@ -9,6 +9,8 @@ import { createContext, useReducer, useState } from "react"
 import Customhookscreen from "../screens/customhookscreen"
 import Usecallbackexample from "../screens/usecallbackscreen"
 import Addtocart from "../screens/addtocard"
+import Userform from "../screens/table"
+import ShowUserInfo from "../screens/showtable"
 
 
 
@@ -61,6 +63,14 @@ const reducerfun=(state,action)=>{
 //----------> Component
 const NavigationScreen=()=>{
 
+    const data= {
+  name: "",
+  password: ""
+};
+    const [userdata, setuserdata] = useState(data);
+    const [displaydata, setdisplaydata] = useState([]);
+
+
     const[theme,settheme]=useState(false)
     const [card,setcard]=useState([])
    const [currentstate,dispatch]=useReducer(reducerfun,initialvalue)
@@ -70,6 +80,20 @@ const NavigationScreen=()=>{
   // conditionally rendering the button addtocart or gotocart......
 
   const [checkvalue,setcheckvalue]=useState(true)
+
+  const handleNameChange = (e) => {
+    setuserdata({ ...userdata, name: e.target.value });
+  };
+
+  const handlePasswordChange = (e) => {
+    setuserdata({ ...userdata, password: e.target.value });
+  };
+
+
+  const submitform=(e)=>{
+    e.preventDefault()
+    setdisplaydata([...displaydata,{res :userdata}])
+  }
 
 
    const cardhandler=(obj)=>{
@@ -115,6 +139,14 @@ const NavigationScreen=()=>{
     }
 
 
+    
+     
+    
+     
+    
+    
+    
+      
 
  
 
@@ -134,7 +166,14 @@ const NavigationScreen=()=>{
             setcard,
             currentstate,
             setcheckvalue,
-            checkvalue
+            checkvalue,
+            handleNameChange,
+            handlePasswordChange,
+            displaydata,
+            submitform,
+            setuserdata,
+            setdisplaydata,
+            submitform
         }}>
         
     
@@ -142,6 +181,8 @@ const NavigationScreen=()=>{
         <Routes>
             <Route path="/" Component={HomeScreen} />
              <Route path="/about"  Component={AboutScreen}/> 
+             <Route path="/userfrom"  Component={Userform}/> 
+             <Route path="/ShowUserInfo"  Component={ShowUserInfo}/> 
              <Route path="/setting"  Component={SettingScreen}/> 
              <Route path="/blog"  Component={BlogScreen}/> 
              <Route path="/usecallback"  Component={Usecallbackexample}/> 

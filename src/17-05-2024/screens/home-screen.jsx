@@ -45,7 +45,7 @@ console.log(productlist)
             productlist.map((eachproduct) => {
               const { brand, thumbnail, id, title, price } = eachproduct;
               return (
-                <Col key={id} md={3} className="mb-4 mt-5 d-flex flex-wrap justify-content-center  images">
+                <Col key={id} md={3} className="mb-4  d-flex flex-wrap justify-content-center  images">
                   <Card className="w-100">
                    
 

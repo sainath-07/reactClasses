@@ -16,7 +16,7 @@ const CustomNavbar = () => {
 
   return (
     <nav
-    className={`d-flex position-fixed top-0 z-1 w-100 justify-content-center navbar navbar-expand-sm ${theme ? 'text-white bg-dark' : 'bg-light navbar-light'}`}
+    className={`d-flex w-100 justify-content-center navbar navbar-expand-sm ${theme ? 'text-white bg-dark' : 'bg-light navbar-light'}`}
   >
   
   
@@ -27,6 +27,12 @@ const CustomNavbar = () => {
             <Nav className="me-auto">
               <Nav.Link as={Link} className={theme && "text-white"} to="/">
                 Home
+              </Nav.Link>
+              <Nav.Link as={Link} className={theme && "text-white"} to="/userfrom">
+              userfrom
+              </Nav.Link>
+              <Nav.Link as={Link} className={theme && "text-white"} to="/ShowUserInfo">
+              ShowUserInfo
               </Nav.Link>
 
               <Nav.Link as={Link} className={theme && "text-white"} to="/about">
