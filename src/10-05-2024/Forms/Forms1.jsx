@@ -10,6 +10,7 @@ const Forms = () => {
   const formsubmit = (e) => {
     e.preventDefault();
     const usercheck = usernameref.current.value;
+    console.log(usercheck)
     
     const userpasscheck = usernameref.current.value;
     
@@ -63,10 +64,10 @@ const Forms = () => {
           style={{
             border: "2px solid black",
           }}
-          type="submit"
+          type=""
           className="btn btn-default"
         >
-          Submit
+          Submi
         </button>
       </form>
     </>
