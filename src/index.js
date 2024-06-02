@@ -8,19 +8,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import reportWebVitals from './reportWebVitals';
 import 'react-toastify/dist/ReactToastify.css';
 // Redux...
-import { Provider } from 'react-redux'
-import { reduxStore } from './ReduxCourse/May27/Redux/store.jsx';
-import { May28Store } from './ReduxCourse/May28/Redux/store.jsx';
+// import { Provider } from 'react-redux'
+// import { May29Store } from './ReduxCourse/May29/Store/May29store.jsx';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
 
 
-      <Provider store={May28Store}>
+      {/* <Provider store={May29Store}> */}
 
         <App />
-      </Provider>
+      {/* </Provider> */}
 
     </React.StrictMode>
 

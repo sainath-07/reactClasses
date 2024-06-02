@@ -1,13 +1,11 @@
 
-import ReactLayer from "./ReduxCourse/May27/React/ReactLayer";
-import HttpCalls_reudx from "./ReduxCourse/May28/React/Httpscalls_Redux";
-import May28 from "./ReduxCourse/May28/React/May28";
+// import ReactLayer from "./ReduxCourse/May27/React/ReactLayer";
 
 const Render=()=>{
    return(
     <>
 
-    <HttpCalls_reudx/>
+    {/* <ReactLayer/> */}
 
     </>
    )
